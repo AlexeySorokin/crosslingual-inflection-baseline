@@ -1,6 +1,6 @@
 {
     "--dataset": "sigmorphon19task1",
-    "--train": "../data/task1/adyghe--kabardian/adyghe-train-high data/task1/adyghe--kabardian/kabardian-train-low",
+    "--train": "../data/task1/adyghe--kabardian/adyghe-train-high ../data/task1/adyghe--kabardian/kabardian-train-low",
     "--dev": "../data/task1/adyghe--kabardian/kabardian-dev",
     "--test": "../data/task1/adyghe--kabardian/kabardian-test",
     "--model": "model/sigmorphon19/task1/kabardian_adyghe",
