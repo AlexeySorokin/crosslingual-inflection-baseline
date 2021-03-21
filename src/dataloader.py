@@ -210,9 +210,12 @@ class SIGMORPHON2019Task1(Seq2SeqDataLoader):
         return source, target
 
     def read_file(self, file):
+        print(file)
         if 'train' in file:
             lang_tag = [file.split('/')[-1].split('-train')[0]]
         elif 'dev' in file:
+            lang_tag = [file.split('/')[-1].split('-dev')[0]]
+        elif 'test' in file:
             lang_tag = [file.split('/')[-1].split('-dev')[0]]
         else:
             raise ValueError
