@@ -1,0 +1,20 @@
+{
+    "--dataset": "sigmorphon19task1",
+    "--train": "data/task1/adyghe--kabardian/adyghe-train-high data/task1/adyghe--kabardian/kabardian-train-low",
+    "--dev": "data/task1/adyghe--kabardian/kabardian-dev",
+    "--model": "model/sigmorphon19/task1/kabardian_adyghe",
+    "--embed_dim": 200,
+    "--src_hs": 400,
+    "--trg_hs": 400,
+    "--dropout": 0.4,
+    "--src_layer": 2,
+    "--trg_layer": 1,
+    "--max_norm": 5,
+    "--arch": "hmmfull",
+    "--estop": 1e-8,
+    "--epochs": 2,
+    "--bs": 20,
+    "--mono": true,
+    "--shuffle": true,
+    "--patience": 10
+}

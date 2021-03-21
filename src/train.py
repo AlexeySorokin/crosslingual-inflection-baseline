@@ -40,12 +40,13 @@ DEV = 'dev'
 TEST = 'test'
 
 
-def get_args():
+def get_args(args=None):
     '''
     get_args
     '''
     # yapf: disable
     parser = argparse.ArgumentParser()
+    # parser.add_argument('--json', default=None)
     parser.add_argument('--seed', default=0, type=int)
     parser.add_argument('--dataset', required=True, type=Data, choices=list(Data))
     parser.add_argument('--train', required=True, nargs='+')
@@ -78,7 +79,7 @@ def get_args():
     parser.add_argument('--bestacc', default=False, action='store_true', help='select model by accuracy only')
     parser.add_argument('--shuffle', default=False, action='store_true', help='shuffle the data')
     # yapf: enable
-    return parser.parse_args()
+    return parser.parse_args(args=args)
 
 
 class Trainer(object):
@@ -350,11 +351,11 @@ class Trainer(object):
         os.remove(f'{model_fp}.progress')
 
 
-def main():
+def main(args=None):
     '''
     main
     '''
-    opt = get_args()
+    opt = get_args(args=args)
     util.maybe_mkdir(opt.model)
     logger = util.get_logger(opt.model + '.log', log_level=opt.loglevel)
     for key, value in vars(opt).items():
