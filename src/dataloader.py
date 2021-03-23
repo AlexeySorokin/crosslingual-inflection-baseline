@@ -216,9 +216,11 @@ class SIGMORPHON2019Task1(Seq2SeqDataLoader):
         elif 'dev' in file:
             lang_tag = [file.split('/')[-1].split('-dev')[0]]
         elif 'test' in file:
-            lang_tag = [file.split('/')[-1].split('-dev')[0]]
+            lang_tag = [file.split('/')[-1].split('-test')[0]]
+        elif 'hall' in file:
+            lang_tag = [file.split('/')[-1].split('-hall')[0]]
         else:
-            raise ValueError
+            lang_tag = [file.split('/')[-1].split('-')[0]]
         with open(file, 'r', encoding='utf-8') as fp:
             for line in fp.readlines():
                 lemma, word, tags = line.strip().split('\t')
